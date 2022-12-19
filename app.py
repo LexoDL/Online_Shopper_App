@@ -154,7 +154,7 @@ else:
 
 # Zweiter Plot
 
-fig2 = sns.displot(x=data[variable], height= 3.5, hue=data["Revenue"], kind="kde", palette="Set2", multiple="stack")
+fig2 = sns.displot(x=data[variable], height= 3.5, hue=data["Revenue"], kind="kde", palette="Set2")
 row2_col2.subheader("Dichteverteilung der ausgewählten Variable *{}*".format(variable))
 row2_col2.pyplot(fig2)
 
