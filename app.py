@@ -31,7 +31,7 @@ def load_variable_explanation():
     return(data.dropna())
 variable_explanation = load_variable_explanation()
 
-@st.cache(hash_funcs={'xgboost.sklearn.XGBClassifier': id})
+@st.cache(hash_funcs={'xgboost.sklearn.XGBClassifier': id}, allow_output_mutation=True)
 def load_model():
     filename = "finalized_default_model.sav"
     loaded_model = pickle.load(open(filename, "rb"))
