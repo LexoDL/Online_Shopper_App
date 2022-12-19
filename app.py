@@ -76,8 +76,8 @@ add_space(3)
 row1_col1, row1_col2, row1_col3 = st.columns([1,1,1])
 
 # slider page values
-p_value_max = float(data["Page_values"].max())
-p_value_min = float(data["Page_values"].min())
+p_value_max = float(data["PageValues"].max())
+p_value_min = float(data["PageValues"].min())
 
 p_value = row1_col1.slider("Page-Value",
                   p_value_min,
