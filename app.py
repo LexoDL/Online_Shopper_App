@@ -52,7 +52,7 @@ st.header("Einführung: Das Revenue-Predictor Modell")
 st.write("Kaufen oder nicht kaufen? Diese Frage stellt sich nicht nur für Besucher von Online Shopping Portalen, sondern auch den Betreibern \
          der Webseiten. Zum einem ist Kenntnis über Kunden ein großer Vorteil für effektives Marketing. Zum anderen hilft eine verlässliche \
         Vorhersage von Einnahmen dabei, realistische Budgets zu erstellen. Wissen über Kaufentscheidungen ist daher eine wertvolle \
-        Ressource für zahlreiche Unternehmen. Um diese Fragen zu beantworten sagt diese App für individuelle Kunden voraus, ob es am Ende eines\
+        Ressource für zahlreiche Unternehmen. Um diese Frage zu beantworten, sagt diese App für individuelle Kunden voraus, ob es am Ende eines\
         Website-Besuchs zu einer Transaktion kommt oder nicht.")
 st.write("Für die Vorhersage wird ein XGBoost-Model verwendet, welches dabei schnell und zuverlässig arbeitet.\
          Die ausschlaggebensten Variablen sind **PageValue**, **Month** und **Visitor Type**.")
@@ -171,7 +171,7 @@ row2_col3.subheader("Wahrscheinlichkeit Revenue in Abhängigkeit der Variable *{
 fig3, ax = plt.subplots(figsize=(10,7.5))
 ax.scatter(data_proba[variable], data_proba["Revenue Probability"], edgecolor='#4d4d4d', label=variable, alpha=0.8)
 ax.set_xlabel(variable, fontsize=15)
-ax.set_ylabel("Wahrscheinlichkeit einer Transaktion in Prozent", fontsize=15)
+ax.set_ylabel("Wahrscheinlichkeit einer Transaktion", fontsize=15)
 ax.grid()
 ax.legend().set_title("Variable")
 ax.set_facecolor("#f5f5fa")
@@ -205,7 +205,7 @@ row3_col1.write("Wähle eine Person aus und entscheide, basierend auf den Werten
 with row3_col1.form(key="sample_form"):
     sample = st.selectbox("Wähle eine Person aus:", 
                           test_samples.index)
-    guess = st.radio("Entscheide, ob die ausgewählte Person nach dem besuch der Shopping-Website \
+    guess = st.radio("Entscheide, ob die ausgewählte Person nach dem Besuch der Shopping-Website \
                      eine Transaktion durchführt oder nicht.",
                      ('Transaktion', 'Keine Transaktion'))
     submit = st.form_submit_button("Submit")
@@ -233,7 +233,7 @@ with row3_col1.form(key="sample_form"):
 ### Display the table with the values for the guessing game        
 row3_col2.write("\n")
 row3_col2.write("\n")
-if row3_col2.checkbox("Klicke hier um die Werte für jede Person zu sehen."):
+if row3_col2.checkbox("Klicke hier, um die Werte für jede Person zu sehen."):
 
     row3_col2.write("Diese Tabelle zeigt für jede Person die drei wichtigsten Werte für die Vorhersage der \
                     Zielvariable *Revenue*, also ob eine Transaktion stattfindet oder nicht.")
